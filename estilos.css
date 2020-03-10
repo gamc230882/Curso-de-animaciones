@@ -1,0 +1,492 @@
+
+.grid{
+  display: grid;
+  grid-template-areas:        "container-1      container-2    container-3"
+                              "container-4     container-5    container-6" 
+                              "container-7     container-8    container-9" 
+                              "container-10    container-11   container-12"
+                              "container-13    container-14   container-15" 
+                              "container-16    container-16   container-16"; 
+
+  justify-content: center;
+  gap: 30px;  
+}
+
+    /* .container-1{
+      grid-template-rows: "container-1";
+    }
+    .container-2{
+      grid-template-rows: "container-1";
+    }
+    .container-3{
+      grid-template-rows: "container-3";
+    }
+    .container-4{
+      grid-template-rows: "container-4";
+    }
+    .container-5{
+      grid-template-rows: "container-5";
+    }
+    .container-6{
+      grid-template-rows: "container-6";
+    }
+    .container-7{
+      grid-template-rows: "container-7";
+    }
+    .container-8{
+      grid-template-rows: "container-8";
+    }
+    .container-9{
+      grid-template-rows: "container-9";
+    }
+    .container-10{
+      grid-template-rows: "container-10";
+    }
+    .container-11{
+      grid-template-rows: "container-11";
+    }
+    .container-12{
+      grid-template-rows: "container-12";
+    }
+    .container-13{
+      grid-template-rows: "container-13";
+    }
+    .container-14{
+      grid-template-rows: "container-14";
+    }
+    .container-15{
+      grid-template-rows: "container-15";
+    }
+    .container-16{
+      grid-template-areas:"container-16" ;
+    } */
+
+.container-1,
+.container-2,
+.container-3,
+.container-4,
+.container-5,
+.container-6,
+.container-7,
+.container-8,
+.container-9,
+.container-10,
+.container-11,
+.container-12,
+.container-13,
+.container-14,
+.container-15,
+.container-16{
+  border: 10px solid black;
+  width: 300px;
+  height: 300px;
+  background: white;
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+  margin-bottom: auto;
+
+}
+.usando-hover,
+.Triangulo-Lateral,
+.Triangulo-fijo,
+.Esquina-pagina,
+.Sombra-fija,
+.Sombra-difuminada,
+.Sombra-radial,
+.Sombra-externa,
+.Sombra-interna,
+.Iluminacion,
+.Resaltar-borde,
+.Borde-interno,
+.Borde-expandido,
+.Borde-expandido-interno,
+.Borde-radius,
+.Barra-lineal{
+  font-size: 40px;
+  height: 80%;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  background-color: #b8b8fc;    
+}
+
+a{
+  margin: 0px;
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  color: #fff;
+  text-decoration: none;
+}
+.usando-hover:hover{
+  background: chartreuse;
+}
+a:hover{
+  color: blue;
+}
+/* usando el seudo elento hover */
+/* Se puede usar el seudo elemento focus solo a los enlaces y solo se activa cuando se le haga click al elemento que lo tiene y queda activado hasta que se vuelva hacer click */
+/* Se puede usar el seudo elemento active y solo a los enlaces se activa cuando se le haga click al elemento y se desactiva al intante */
+
+
+p{
+  margin: 0px;
+  display: flex;
+  margin-top: auto;
+  text-align: center;
+  margin-bottom: auto;
+  color: #fff;
+}
+
+.Triangulo-Lateral{
+  transform: translateX(0);
+}
+.Triangulo-Lateral:before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -20px;  
+  transition-duration: .7s;
+  border-style: solid;
+  border-width: 25px 25px 25px 0px;
+  border-color: transparent
+              #b5b5e2
+                transparent
+                transparent;
+}
+
+.Triangulo-Lateral:hover:before{
+  left: -23px;
+}
+
+.Triangulo-fijo{
+  transform: translateX(0);
+  transition-duration: .5s;
+}
+
+.Triangulo-fijo:before{
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  margin-left: -20px;  
+  transition-duration: .7s;
+  border-style: solid;
+  border-width: 0px 25px 25px 25px;
+  border-color: transparent
+                transparent
+                rgb(164, 164, 209)
+                transparent;
+}
+
+.Triangulo-fijo:hover{
+  transform: translateY(23px);
+}
+
+.Triangulo-fijo:hover:before{
+  top: -23px;
+}
+
+/* Efecto de triangulo fijo y triangulo en movimiento */
+
+
+.Esquina-pagina{
+  transform: translateX(0);
+
+}
+
+.Esquina-pagina:before{
+  content: "";
+    
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, white 45%, #aaa 50%, #ccc 60%, white);
+  transition: .5s;
+}
+
+.Esquina-pagina:hover:before{
+  width: 70px;
+  height: 70px;
+  position:absolute;
+  background: linear-gradient(45deg, white 45%, #aaa 50%, #ccc 60%, white);
+
+}
+
+/* Esquina de pagina doblada */
+
+
+.Sombra-fija{
+  transform: translateX(0);
+  transition-duration: .5s;
+
+}
+
+.Sombra-fija:before{
+  content: "";
+  width: 0%;
+  height: 0%;
+  position: absolute;
+  top: 100%;
+  background: -webkit-radial-gradient( 
+                                center, ellipse,
+                              rgba(0,0,0,0.50) 0%,
+                              rgba(0,0,0,0) 80%);
+
+}
+
+.Sombra-fija:hover:before{
+  width: 90%;
+  height: 10%;
+  background: -webkit-radial-gradient( 
+    center, ellipse,
+  rgba(0,0,0,0.50) 0%,
+  rgba(0,0,0,0) 80%);
+  transition-duration: .8s;
+
+}
+
+.Sombra-fija:hover{
+  transform: translateY( -10px);
+}
+
+/* Creando una sombra fija, estar pendiente con los prefijos para los diferentes navegadores */
+
+
+.Sombra-difuminada{
+  box-shadow: 0px 0px 2px rgba(0,0,0,1);
+  transition: 1s;
+}
+
+.Sombra-difuminada:hover{
+  box-shadow: 0px 0px 15px rgba(0,0,0,1);
+
+}
+
+/* se realiza con box-shadow  */
+
+.Sombra-radial{
+box-shadow: 0px 0px 0px black;
+position: relative;
+
+}
+
+.Sombra-radial:before,
+.Sombra-radial:after{
+  content: "";
+  width: 100%;
+  height: 10px;
+  position: absolute;
+  bottom: 100%;
+  opacity: 0;
+  transition-duration: 1s;  
+}
+
+.Sombra-radial:before{
+  background: radial-gradient( 
+                                ellipse at 50% 150%,
+                              rgba(0,0,0,0.6) 0%,
+                              rgba(0,0,0,0) 80%);
+}
+
+.Sombra-radial:after{
+  content: "";
+  width: 100%;
+  height: 10px;
+  position: absolute;
+  top: 100%;
+  background: radial-gradient( 
+                                ellipse at 50% -50%,
+                              rgba(0,0,0,0.6) 0%,
+                              rgba(0,0,0,0) 80%);
+}
+
+.Sombra-radial:hover:before,
+.Sombra-radial:hover:after{
+  opacity: 1;
+}
+
+/* Para la sombra radial hay que estar muy pendiente con los prefijos de los navegadores  */
+
+
+.Sombra-externa{
+  box-shadow: 0PX 0PX 10PX black;
+  transition-duration: .5s;
+}
+
+.Sombra-externa:hover{
+  box-shadow: 10PX 0PX 10PX red;
+}
+
+/* Los desplazamienbtos son vertical, horizontal y desfuminados donde los valores negativos son para la izquierda y arriba y los positivos son hacia la derecha y hacia abajo y el disfumidado es el ultimo valor. */
+
+
+.Sombra-interna{
+  transition-duration: 1S;
+}
+
+.Sombra-interna:hover{
+  box-shadow: 3px 3px 15px red inset,
+              -3px -3px 15px red inset;
+}
+
+/* para colocar las sombras internas se le coloca la palabra inset.  */
+
+.Iluminacion p{
+  color: black;
+  font-weight: 600;
+}
+
+.Iluminacion{
+  border: 3px solid black;
+  
+}
+.Iluminacion:hover{
+  background: white;
+  transition-duration: .5S;  
+}
+
+
+/* Estar pendiente y jugar mucho con los colores de fondo para crear el efecto de iluminacion.  */
+
+.Resaltar-borde{
+  box-shadow: inset 0 0 0 10px #ddd;
+  font-size: 35px;
+}
+
+.Resaltar-borde:hover{
+
+  box-shadow: inset 0 0 0 10px #555;
+  transition-duration: 1s;
+}
+
+/* Hay que jugar con loscolres de fondo para lograr resaltar.  */
+
+
+.Borde-interno{
+position: relative;
+font-size: 35px;
+
+
+
+}
+
+.Borde-interno:before{
+  content: "";
+  position: absolute;
+  border: 7px solid black;
+  top: 10px;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  opacity: 0;
+  transition-duration: 1s;
+}
+
+.Borde-interno:hover:before{
+
+  border: 7px solid black;
+  opacity: 1;
+}
+/* Jugar con los colores de fondo.  */
+
+
+.Borde-expandido{
+  position: relative;
+}
+
+.Borde-expandido:before{
+  content: "";
+  position: absolute;
+  border: 7px solid black;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+
+.Borde-expandido:hover:before{
+  border: 7px solid black;
+  top: -15px;
+  bottom: -15px;
+  left: -15px;
+  right: -15px;
+  transition-duration: 1s;
+
+}
+
+.Borde-expandido-interno{
+  position: relative;
+}
+
+.Borde-expandido-interno:before{
+  content: "";
+  position: absolute;
+  border: 7px solid black;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.Borde-expandido-interno:hover:before{
+  border: 7px solid black;
+  top: 10px;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  transition-duration: 1s;
+}
+
+/* Hay diferentes formas de hacer bordes, las bases son estas.  */
+
+
+.Borde-radius{
+  transition-duration: .5s;
+}
+
+.Borde-radius:hover{
+  border-radius: 45px;
+}
+
+/* Simple border radius.  */
+
+
+
+.Barra-lineal li{
+  list-style: none;
+  padding: 15px 0px 10px 0px;
+}
+
+.option-1 a,
+.option-2 a,
+.option-3 a{
+  padding-bottom: 10px;
+}
+
+.Barra-lineal ol{
+  padding: 0px;
+  margin: 0px;
+}
+
+
+.option-1 a:focus{
+  border-bottom: 8px solid greenyellow;
+  
+}
+
+.option-2 a:focus{
+  border-bottom: 8px solid rgb(42, 2, 134);
+}
+
+.option-3 a:focus{
+  border-bottom: 8px solid rgb(252, 4, 169);
+}
