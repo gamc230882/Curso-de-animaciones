@@ -1,0 +1,310 @@
+/* ANIMACIONES CON KEYFRAMES */
+
+/* Animation-name: indica el nombre que tendra el keyframe que añadiremos.
+Animation-duration: indica el tiempo que durara la animacion.
+Animation-interation: indica el tiempo que se repetira la animacion, si queremos que sea un 
+bucle se le coloca infinite.
+Animation-delay: indica el retardo con el que comenzara a aplicarce la reproduccion de la animacion . */
+
+
+.caja,
+.chicle,
+.rebote,
+.aparicion,
+.sombra-mobil,
+.arrow,
+.giro-x,
+.giro-y,
+.giro-y-eje-z{
+  font-size: 40px;
+  height: 80%;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  background-color: rgb(101, 240, 37);
+  position: relative;
+}
+
+.caja:hover{
+  -webkit-animation: 5s cambia-color 1;
+}
+
+@-webkit-keyframes cambia-color{
+  10%{
+    background: yellow;
+  }
+  50%{
+    background: red;
+    height: 120px;
+  }
+}
+
+/* Con los keyframes se pueden cambiar todos los elementos css al porcentaje del 
+tiempo indicado por nosotros. */
+
+.chicle:hover{
+  -webkit-animation: 1s chicle 1;
+}
+
+@-webkit-keyframes chicle{
+  30%{
+   -webkit-transform: scalex(1.55) scaley(0.75);
+  }
+  40%{
+    -webkit-transform: scalex(0.75) scaley(1.25);
+   }
+   60%{
+    -webkit-transform: scalex(1.15) scaley(0.85);
+   }
+}
+
+.rebote:hover{
+  -webkit-animation: 1s rebote 1;
+}
+
+@-webkit-keyframes rebote{
+  10%, 50%, 80%{
+  -webkit-transform: translateY(0px);
+  }
+  30%{
+  -webkit-transform: translateY(-100px);
+  }
+  60%{
+  -webkit-transform: translateY(-50px);
+  }
+  90%{
+  -webkit-transform: translateY(-25px);
+  }
+}
+
+
+
+.aparicion{
+  overflow: hidden;
+  -webkit-animation: 2s aparicion 1;
+}
+
+@-webkit-keyframes aparicion{
+0%{
+  opacity: 0;
+  }
+50%{
+  opacity: 0.8;
+}
+}
+
+.tapa{
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 240px;
+  background-color: white;
+  position: absolute;
+  -webkit-animation: 2s retirada 1;
+}
+
+@-webkit-keyframes retirada{
+0%{
+  left: 0px;
+}
+}
+
+/* El overflow hidden hace que el elemento se esconda al Final 
+del evento ocurrido, se le coloca al div sobre puesto. */
+
+
+
+.sombra-mobil{
+  transform: translateX(0);
+  transition-duration: .5s;
+
+}
+
+.sombra-mobil:before{
+  content: "";
+  width: 0%;
+  height: 0%;
+  position: absolute;
+  top: 100%;
+  background: -webkit-radial-gradient( 
+                                center, ellipse,
+                              rgba(0,0,0,0.50) 0%,
+                              rgba(0,0,0,0) 80%);
+
+}
+
+.sombra-mobil:hover:before{
+  width: 90%;
+  height: 10%;
+  background: -webkit-radial-gradient( 
+    center, ellipse,
+  rgba(0,0,0,0.50) 0%,
+  rgba(0,0,0,0) 80%);
+  transition-duration: .8s;
+}
+
+.sombra-mobil:hover{
+  -webkit-transform: translateY( -10px);
+  -webkit-animation: 1.5s movercaja infinite;  
+  }
+
+  @-webkit-keyframes movercaja{
+    50%{
+      -webkit-transform: translateY(-3px);
+    }
+  }    
+
+  .sombra-mobil:hover:before{
+    opacity: 0.5;
+    -webkit-transform: translateY(8px);
+    -webkit-animation: 1.5s moversombra infinite;
+  
+  }
+
+  @-webkit-keyframes moversombra{
+    50%{
+    -webkit-transform: translateY(3px);
+    opacity: 1;
+
+    }
+  }
+
+/* Son combinaciones de seudo elementos con keyframes */
+
+
+.arrow{
+  font-size: 40px;
+  height: 80%;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  background-color: rgb(101, 240, 37);
+  position: relative;
+}
+
+.arrow{
+  transform: translateX(0);
+}
+.arrow:before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -20px;  
+  transition-duration: .7s;
+  border-style: solid;
+  border-width: 25px 25px 25px 0px;
+  border-color: transparent
+                rgb(101, 240, 37)
+                transparent
+                transparent;
+}
+
+.arrow:hover:before{
+  -webkit-animation: 1.2s moverflecha infinite;
+}
+@-webkit-keyframes moverflecha{
+  25%{
+  left: -23px;
+  -webkit-transform: rotate(0);
+  }
+  70%{
+  left: -27px;
+  -webkit-transform: rotate(180deg);
+  }
+
+  90%{
+  -webkit-transform: rotate(180deg);
+  }
+}
+
+
+.giro-x{
+  -webkit-animation: 1.5s giro-x 2;
+  -webkit-backface-visibility: visible;
+
+}
+@-webkit-keyframes giro-x{
+0%{
+  opacity: 0.5;
+  -webkit-transform: perspective(800px)
+                      rotateX(90deg);
+}
+40%{
+  opacity: 0.5;
+  -webkit-transform: perspective(800px)
+                      rotateY(-20deg);
+}
+70%{
+  opacity: .8;
+  -webkit-transform: perspective(800px)
+                      rotateX(20deg);
+}
+}
+
+  /* usar -webkit-backface-visiviliy: visible para cuando este rotabdo se 
+  visualice la parte de atras de la imagen. */
+  /* cambiando la rotacion al eje Y se logran otros efectos. */
+
+
+.giro-y{
+
+  -webkit-animation: 1s giro-y 2;
+  -webkit-backface-visibility: visible;
+}
+
+@-webkit-keyframes giro-y{
+40%{
+  -webkit-transform: perspective(800px)
+                      rotateY(170deg);
+}
+50%{
+  -webkit-transform: perspective(800px)
+                      rotateY(190deg);
+}
+80%{
+  -webkit-transform: perspective(800px)
+                      rotateY(360deg);
+}
+100%{
+  -webkit-transform: perspective(800px)
+                      rotateY(360deg);
+}
+}
+
+
+.giro-y-eje-z{
+  -webkit-animation: 1s giro-eje-z 3;
+  -webkit-backface-visibility: visible;
+}
+
+@-webkit-keyframes giro-eje-z{
+  40%{
+    -webkit-transform: perspective(800px)
+                        rotateY(170deg)
+                        translateZ(300px);
+  }
+  50%{
+    -webkit-transform: perspective(800px)
+                        rotateY(190deg)
+                        translateZ(300px);
+
+  }
+  80%{
+    -webkit-transform: perspective(800px)
+                        rotateY(360deg)
+                        translateZ(0px);
+
+  }
+  100%{
+    -webkit-transform: perspective(800px)
+                        rotateY(360DEG);
+  }
+  }
+
+  /* El orden en el que colocamos el traslate influye en la rotacion, 
+  hay que estar pendiente siempre del orden. */

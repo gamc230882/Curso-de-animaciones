@@ -1,4 +1,22 @@
 
+h1{
+  text-align: center;
+  font-size: 45px;
+  transition-duration: 1s;
+  border: 5px solid black;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: darkblue;
+  color: white;
+}
+
+
+h1:hover{
+  color: rgb(35, 228, 9);
+  background-color: rgb(243, 239, 239);
+}
+
 .grid{
   display: grid;
   grid-template-areas:        "container-1      container-2    container-3"
@@ -110,7 +128,7 @@
   justify-content: center;
   margin-top: auto;
   margin-bottom: auto;
-  background-color: #b8b8fc;    
+  background-color: rgb(101, 240, 37);    
 }
 
 a{
@@ -155,7 +173,7 @@ p{
   border-style: solid;
   border-width: 25px 25px 25px 0px;
   border-color: transparent
-              #b5b5e2
+              rgb(21, 161, 32)
                 transparent
                 transparent;
 }
@@ -180,7 +198,7 @@ p{
   border-width: 0px 25px 25px 25px;
   border-color: transparent
                 transparent
-                rgb(164, 164, 209)
+                rgb(21, 161, 32)
                 transparent;
 }
 
@@ -490,3 +508,6 @@ font-size: 35px;
 .option-3 a:focus{
   border-bottom: 8px solid rgb(252, 4, 169);
 }
+
+
+
